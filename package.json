@@ -21,21 +21,17 @@
   "scripts": {
     "env": "env",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predev": "rimraf dist/*",
-    "dev": "npm-run-all --parallel watch:*",
-    "watch:fonts": "chokidar 'src/fonts' --command 'npm run build:fonts' --initial",
+    "dev": "npm run clean --silent && npm run build --silent && npm run serve --silent",
+    "clean": "rimraf dist/*",
+    "build": "npm-run-all --parallel build:*",
+    "serve": "light-server --config .lightserverrc",
     "build:fonts": "cp -rf src/fonts dist/fonts",
-    "watch:images": "chokidar 'src/images' --command 'npm run build:images' --initial",
     "build:images": "cp -rf src/images dist/images",
-    "watch:js": "chokidar 'src/scripts' --command 'npm run build:js' --initial",
     "build:js": "webpack --mode development",
-    "watch:html": "chokidar 'src/**/*.html' --command 'npm run build:html' --initial",
     "build:html": "cp -rf src/*.html dist",
-    "watch:styles": "chokidar 'src/styles/**/*.scss' --command 'npm run build:styles' --initial",
     "build:styles": "npm-run-all styles:*",
-    "styles:compile": "node-sass --source-map true src/styles/ -o dist/css",
-    "styles:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
-    "watch:serve": "light-server --serve dist/ --port 9090"
+    "styles:compile": "node-sass --source-map true src/styles/ --output dist/css",
+    "styles:autoprefixer": "postcss dist/css/*.css --use autoprefixer --dir dist/css"
   },
   "dependencies": {
     "ajv": "^6.5.2",
