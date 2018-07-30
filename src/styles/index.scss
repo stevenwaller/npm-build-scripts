@@ -43,10 +43,18 @@
 
 @import 'variables';
 
-.class {
-  color: $blue;
+.row {
+  padding: 20px 0;
 }
 
-h1 {
-  color: red;
+.example-wrapper {
+  background-color: #f7f7f9;
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+  margin-bottom: 30px;
+
+  &.add-space > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
+
