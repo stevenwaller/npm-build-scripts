@@ -46,6 +46,7 @@ Thumbs.db
 ###############
 _nogit
 .env
+.temp
 .module-cache
 .tmp
 .sass-cache
