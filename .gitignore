@@ -45,6 +45,7 @@ Thumbs.db
 # Build Files #
 ###############
 _nogit
+.temp
 .env
 .temp
 .module-cache
