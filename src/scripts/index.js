@@ -9,6 +9,7 @@ import Collapse from 'Collapse';
 import Dropdown from 'Dropdown';
 import Modal from 'Modal';
 import Popover from 'Popover';
+import Scrollspy from 'Scrollspy';
 import Tab from 'Tab';
 import Tooltip from 'Tooltip';
 import Util from 'Util';
@@ -23,7 +24,5 @@ $(function () {
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
-
-$('.scrollspy-example').scrollspy({ target: '#list-example' })
 
 
