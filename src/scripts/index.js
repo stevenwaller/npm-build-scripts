@@ -16,4 +16,14 @@ import Util from 'Util';
 // Components
 import './components/test';
 
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+$('.scrollspy-example').scrollspy({ target: '#list-example' })
+
 
