@@ -210,10 +210,10 @@ title: "Example"
 
 See the [Eleventy Documentation](https://www.11ty.io/docs/data/) for all the default keys. You can also add your own custom keys.
 
-Data can then be used in the page like so.
+Data can then be used in the page like so:
 
 ```
-{{title}}
+<h1>{{title}}<h1>
 ```
 
 #### Partials
