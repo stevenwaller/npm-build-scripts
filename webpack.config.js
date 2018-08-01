@@ -69,18 +69,7 @@ module.exports = {
     // import OldLibrary from 'old-library';
     alias: {
       // Use .modernizrrc to create a custom build instead of using full library
-      modernizr$: path.resolve(__dirname, '.modernizrrc'),
-      Alert: path.resolve(__dirname, 'node_modules/bootstrap/js/src/alert.js'),
-      Button: path.resolve(__dirname, 'node_modules/bootstrap/js/src/button.js'),
-      Carousel: path.resolve(__dirname, 'node_modules/bootstrap/js/src/carousel.js'),
-      Collapse: path.resolve(__dirname, 'node_modules/bootstrap/js/src/collapse.js'),
-      Dropdown: path.resolve(__dirname, 'node_modules/bootstrap/js/src/dropdown.js'),
-      Modal: path.resolve(__dirname, 'node_modules/bootstrap/js/src/modal.js'),
-      Popover: path.resolve(__dirname, 'node_modules/bootstrap/js/src/popover.js'),
-      Scrollspy: path.resolve(__dirname, 'node_modules/bootstrap/js/src/scrollspy.js'),
-      Tab: path.resolve(__dirname, 'node_modules/bootstrap/js/src/tab.js'),
-      Tooltip: path.resolve(__dirname, 'node_modules/bootstrap/js/src/tooltip.js'),
-      Util: path.resolve(__dirname, 'node_modules/bootstrap/js/src/util.js')
+      modernizr$: path.resolve(__dirname, '.modernizrrc')
     }
   },
 
