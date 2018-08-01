@@ -1,7 +1,1 @@
-import Modernizr from 'modernizr';
-import $ from 'jquery';
-
-// Components
-import './example-component';
-
-
+console.log('I am the test file');
