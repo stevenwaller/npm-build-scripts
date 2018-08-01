@@ -1,11 +1,10 @@
 {
-  "name": "bootstrap-starter",
+  "name": "npm-build-scripts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Use NPM scripts to build a site",
   "main": "index.js",
-  "author": "",
-  "license": "PRIVATE",
-  "private": true,
+  "author": "Steven Waller",
+  "license": "MIT",
   "browserslist": [
     "last 1 major version",
     ">= 1%",
@@ -19,23 +18,18 @@
     "Opera >= 30"
   ],
   "scripts": {
-    "env": "env",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean --silent && npm-run-all build:assets build:html build:sass build:autoprefixer \"build:js -- --mode production\"",
     "dev": "npm run clean --silent && npm-run-all --parallel watch serve",
-    "build": "npm run clean --silent && npm-run-all build:*",
     "clean": "rimraf dist/*.* dist/**/*.*",
-    "serve": "browser-sync start --server \"dist\" --files \"dist\" --no-ghost-mode --no-open",
-    "watch": "make-dir dist && npm-run-all --parallel watch:*",
-    "watch:assets": "cpx \"src/**/*.!(hbs|scss|js)\" dist --verbose --watch",
+    "watch": "make-dir dist && npm-run-all --parallel \"build:* -- --watch\"",
+    "serve": "browser-sync start --server dist --files dist --no-ghost-mode --no-open",
     "build:assets": "cpx \"src/**/*.!(hbs|scss|js)\" dist",
-    "watch:html": "eleventy --config=eleventy.config.js --watch",
     "build:html": "eleventy --config=eleventy.config.js",
-    "watch:js": "webpack --mode development --watch",
-    "build:js": "webpack --mode production",
-    "watch:sass": "node-sass-chokidar src/styles/ --source-map dist/css --output .temp --watch",
     "build:sass": "node-sass-chokidar src/styles/ --source-map dist/css --output .temp --output-style compressed",
-    "watch:autoprefixer": "postcss .temp/*.css --use autoprefixer --dir dist/css --watch",
-    "build:autoprefixer": "postcss .temp/*.css --use autoprefixer --dir dist/css"
+    "build:autoprefixer": "postcss .temp/*.css --use autoprefixer --dir dist/css",
+    "build:lint": "esw src/scripts/{,**/}*.js",
+    "build:js": "webpack"
   },
   "dependencies": {
     "jquery": "^3.3.1",
