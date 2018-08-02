@@ -48,7 +48,7 @@ Build site using NPM scripts without Gulp or Grunt.
 #### `build`
 
 ```
-"rimraf dist && npm-run-all build:assets build:html build:sass build:autoprefixer \"build:js -- --mode production\""
+"npm run clean && npm-run-all build:assets build:html build:sass build:autoprefixer \"build:js -- --mode production\""
 ```
 
 - Clean out the `dist` directory
@@ -58,11 +58,20 @@ Build site using NPM scripts without Gulp or Grunt.
 #### `dev`
 
 ```
-"rimraf dist && npm-run-all --parallel watch serve"
+"npm run clean && npm-run-all --parallel watch serve"
 ```
 
 - Cleans out the `dist` directory
 - Runs the `watch` and `serve` commands in parallel.
+
+### `clean`
+
+```
+"rimraf dist && mkdir dist"
+```
+
+- Remove the `dist` directory
+- Create a new, empty `dist` directory.
 
 #### `watch`
 
@@ -131,7 +140,7 @@ Build site using NPM scripts without Gulp or Grunt.
 "esw src/scripts/{,**/}*.js"
 ```
 
-- Lint the `.js` files in the `src/scripts` directory using Eslint
+- Lint the `.js` files in the `src/scripts` directory using ESLint
 - Optionally watch the files for changes
 
 #### `build:js`
