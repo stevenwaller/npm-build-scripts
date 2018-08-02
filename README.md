@@ -48,7 +48,7 @@ Build site using NPM scripts without Gulp or Grunt.
 #### `build`
 
 ```
-"npm run clean && npm-run-all build:assets build:html build:sass build:autoprefixer \"build:js -- --mode production\""
+"npm run clean && npm-run-all build:assets build:html build:sass build:autoprefixer \"build:js -- --mode production\" asset-cache-bust"
 ```
 
 - Clean out the `dist` directory
@@ -152,6 +152,14 @@ Build site using NPM scripts without Gulp or Grunt.
 - Compile all `.js` files from `src/scripts` using Babel and Webpack
 - Optionally watch the files for changes
 - See the `webpack.config.js` file for more details
+
+#### `bust-cache`
+
+```
+"asset-cache-bust \"dist/**/*html\" --asset-root dist --verbose"
+```
+
+- Append a hash url parameter to CSS and JS links to bust the cache
 
 ## Development Workflow
 
